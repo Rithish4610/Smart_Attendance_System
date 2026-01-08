@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📸 Smart Attendance System</h1>
+            <p>Face Recognition Based Attendance Management</p>
+        </header>
+
+        <div class="nav">
+            <a href="/" class="btn">🏠 Home</a>
+            <a href="/dashboard" class="btn">📊 Dashboard</a>
+        </div>
+
+        <div class="card">
+            <h2>Welcome to Smart Attendance</h2>
+            <p style="margin: 20px 0; line-height: 1.8;">
+                This system uses advanced face recognition technology to automatically 
+                mark attendance. Simply stand in front of the camera and your attendance 
+                will be recorded instantly.
+            </p>
+            
+            <h3 style="margin-top: 30px;">How to Use:</h3>
+            <ol style="margin: 15px 0; padding-left: 20px; line-height: 2;">
+                <li>Ensure your face images are in the <code>dataset/YourName/</code> folder</li>
+                <li>Run <code>python encode_faces.py</code> to encode your face</li>
+                <li>Run <code>python camera.py</code> to start the attendance system</li>
+                <li>Face the camera - your attendance will be marked automatically</li>
+                <li>Press <strong>Enter</strong> to exit the camera</li>
+            </ol>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="/dashboard" class="btn">View Attendance Records →</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Smart Attendance System © 2026</p>
+        </div>
+    </div>
+</body>
+</html>

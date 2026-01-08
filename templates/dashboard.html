@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Attendance Dashboard</h1>
+            <p>View all attendance records</p>
+        </header>
+
+        <div class="nav">
+            <a href="/" class="btn">🏠 Home</a>
+            <a href="/dashboard" class="btn">📊 Dashboard</a>
+        </div>
+
+        <div class="card">
+            <h2>Attendance Records</h2>
+            
+            {% if data %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td><span class="status-badge status-present">Present</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p style="text-align: center; padding: 40px; color: #666;">
+                No attendance records found. Start the camera system to begin marking attendance.
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="footer">
+            <p>Smart Attendance System © 2026</p>
+        </div>
+    </div>
+</body>
+</html>
